@@ -1,0 +1,80 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-form-container {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 40px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-logo {
+    font-family: 'Pacifico', cursive; /* We can use an image or font */
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.auth-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group {
+    position: relative;
+    width: 100%;
+}
+
+.auth-input {
+    width: 100%;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.auth-input:focus {
+    border-color: var(--text-secondary);
+}
+
+.auth-btn {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.auth-redirect {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-redirect a {
+    color: var(--accent-color);
+    font-weight: 600;
+}

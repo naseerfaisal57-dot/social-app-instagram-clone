@@ -1,0 +1,144 @@
+.stories-tray {
+    display: flex;
+    overflow-x: auto;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.stories-tray::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.story-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 16px;
+    cursor: pointer;
+    width: 66px;
+}
+
+.story-avatar-container {
+    width: 66px;
+    height: 66px;
+    border-radius: var(--border-radius-full);
+    background: var(--gradient-story);
+    padding: 3px; /* border thickness */
+    margin-bottom: 6px;
+}
+
+.story-avatar-container.viewed {
+    background: var(--border-color);
+}
+
+.story-avatar-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-full);
+    object-fit: cover;
+    border: 2px solid var(--bg-primary); /* gap inside gradient */
+}
+
+.story-username {
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Fullscreen Story Viewer */
+.story-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #111;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-viewer-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-progress-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 4px;
+    z-index: 10;
+}
+
+.story-progress-bar {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.story-progress-fill {
+    height: 100%;
+    background: white;
+    width: 0%;
+}
+
+.story-viewer-header {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.story-viewer-user {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.story-viewer-user img {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-full);
+    margin-right: 10px;
+}
+
+.story-viewer-close {
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.story-viewer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-viewer-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 5;
+}
+
+.story-nav-prev { left: 0; }
+.story-nav-next { right: 0; }

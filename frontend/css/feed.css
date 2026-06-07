@@ -1,0 +1,179 @@
+.feed-container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.post-card {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+    .post-card {
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+    }
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+}
+
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-full);
+    object-fit: cover;
+    margin-right: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.post-username {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.post-image-container {
+    width: 100%;
+    position: relative;
+    user-select: none;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+    display: block;
+}
+
+.like-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: white;
+    font-size: 100px;
+    opacity: 0;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.like-animation.animate {
+    animation: heartPopup 1s ease-out;
+}
+
+@keyframes heartPopup {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    15% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
+    30% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    70% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+
+.post-actions {
+    display: flex;
+    padding: 12px 14px 8px;
+    font-size: 24px;
+}
+
+.post-actions button {
+    color: var(--text-primary);
+    margin-right: 16px;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.post-actions button:hover {
+    color: var(--text-secondary);
+}
+
+.post-actions button:active {
+    transform: scale(0.9);
+}
+
+.btn-like.liked i {
+    color: var(--heart-color);
+    font-weight: 900;
+}
+
+.post-likes {
+    padding: 0 14px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.post-caption {
+    padding: 0 14px;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.post-caption .username {
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.post-comments {
+    padding: 0 14px;
+}
+
+.view-comments {
+    color: var(--text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.comment-list {
+    margin-bottom: 8px;
+}
+
+.comment-item {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.comment-item .username {
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.post-time {
+    padding: 0 14px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.add-comment {
+    display: flex;
+    padding: 10px 14px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+}
+
+.add-comment input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    font-size: 14px;
+}
+
+.add-comment button {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.add-comment button:disabled {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}

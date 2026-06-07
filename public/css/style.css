@@ -1,0 +1,122 @@
+:root {
+    --bg: #ffffff;
+    --fg: #111;
+    --muted: #777;
+    --accent: #ff0050;
+    --border: #dbdbdb;
+    --card: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --bg: #0b0b0b;
+        --fg: #eee;
+        --muted: #bbb;
+        --card: #111;
+    }
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: var(--fg)
+}
+
+main {
+    padding: 12px;
+    padding-bottom: 72px
+}
+
+.stories {
+    display: flex;
+    gap: 12px;
+    overflow: auto;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border)
+}
+
+.story {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.story.unseen {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 3px
+}
+
+.story img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block
+}
+
+#feed {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 12px
+}
+
+.post {
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    display: block
+}
+
+.post .meta {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    gap: 12px;
+    padding: 8px;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    justify-content: space-around
+}
+
+
+/* Desktop sidebar layout */
+
+@media(min-width:900px) {
+    body {
+        display: flex
+    }
+    .bottom-nav {
+        display: none
+    }
+    main {
+        max-width: 900px;
+        margin: 24px auto;
+        padding: 0
+    }
+}
